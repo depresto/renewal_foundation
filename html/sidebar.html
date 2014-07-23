@@ -1,0 +1,20 @@
+<!-- Sidebar -->
+<script>
+	$('#sidebar a').die('click').live('click',function(e){
+		e.preventDefault();
+		query = $(this).attr('href').split('?')[1];
+		loadMenuContent(query,false,false);
+		//loadMenuContent(query,isPopState,isHomePage)
+	});
+	$('#sidebar_container').load('html/sidebar/s_'+_page+'.html',function(){
+		 sb_height = $('#sidebar').height();
+		$('#sidebar').css('margin-top',-sb_height/2);
+		if (_param == null) {
+			$('.sidebar_content li').first().attr('id','sidebar_current');
+		}else {
+			$('.sidebar_content li[name='+_param+']').attr('id','sidebar_current').show().siblings().show();
+		} 
+	});
+</script>
+
+<div id="sidebar_container"></div>

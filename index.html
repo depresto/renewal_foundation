@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>愛基會-財團法人愛心第二春文教基金會</title>
+
+    <meta name="author" content="Wayne Huang">
+    <meta name="Keywords" content="愛基會'慈善基金會'財團法人愛心第二春文教基金會">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <LINK REL="Shortcut Icon" HREF="favicon.ico"></LINK>
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.core.js"></script>
+    <script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.slide.js"></script>
+</head>
+
+<body>
+    <div id="top_segement"></div>
+    <header>
+        <a href="?home" onclick="returnHome(false,event)">
+            <img src="images/index/logo.png" alt="logo" id="logo">
+            <img src="images/index/renewal.svg" onerror="this.src='images/index/renewal.png'" id="title">
+        </a>
+        <a href="https://zh-tw.facebook.com/renewalf" target="_blank">
+            <img src="images/index/facebook.png" alt="FB" id="FB">
+        </a>
+    </header>
+
+    <iframe src="pics.html" frameborder="0" scrolling="no" id="pic_frame"></iframe>
+    <marquee onMouseOver="this.stop()" onMouseOut="this.start()">測試中測試中測試中測試中測試中測試中測試中測試中測試中測試中</marquee>
+    <div class="nav">
+        <div class="block">
+            <div class="block_content" id="about">
+                <img id="img_about" src="images/index/about.jpg" alt="認識愛基會"><a id="img_about">認識愛基會</a></img>
+                <a class="eng_content">About Us</a>
+            </div>
+        </div>
+        <div class="block">
+            <div class="block_content" id="news">
+                <img id="img_news" src="images/index/news.jpg" alt="愛基會動態"><a id="img_news">愛基會動態</a></img>
+                <a class="eng_content">News</a>
+            </div>
+        </div>
+        <div class="block">
+            <div class="block_content" id="service">
+                <img id="img_service" src="images/index/service.jpg" alt="服務內容"><a id="img_service">服務內容</a></img>
+                <a class="eng_content">Service</a>
+            </div>
+        </div>
+        <div class="block">
+            <div class="block_content" id="donate">
+                <img id="img_donate" src="images/index/donate.jpg" alt="奉獻愛心"><a id="img_donate">奉獻愛心</a></img>
+                <a class="eng_content">Donate</a>
+            </div>
+        </div>
+        <div class="block">
+            <div class="block_content" id="contact">
+                <img id="img_contact" src="images/index/contact.jpg" alt="聯絡我們"><a id="img_contact">聯絡我們</a></img>
+                <a class="eng_content">Contact Us</a>
+            </div>
+        </div>
+        <div class="block">
+            <div class="block_content" id="qa">
+                <img id="img_qa" src="images/index/Q&A.jpg" alt="Q&A"><a id="img_qa">Q & A</a></img>
+                <a class="eng_content">Q & A</a>
+            </div>
+        </div>
+        <div class="video">
+            <div class="video_content">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        
+    </div>
+    
+    <div id="sidebar"></div>
+    
+    <footer>
+        <div class="footer_block" id="contact_us">
+            <div class="footer_title">聯絡方式</div>
+            <div class="footer_content" id="contact_info">
+                <a id="address"><i class="fa fa-home"></i>11144台北市士林區中社路一段43巷
+6號4樓</a><br>
+                <a href="tel:+886228413963"><i class="fa fa-phone"></i>(02)2841-3963</a><br>
+                <a href="tel:+886228413964"><i class="fa fa-fax"></i>(02)2841-3964</a><br>
+                <a href="mailto:twrf@renewal.org.tw"><i class="fa fa-envelope"></i>twrf@renewal.org.tw</a>
+            </div>
+            <div id="contact_button">
+                <button id="button_donate"><img src="images/index/devote.svg" onerror="this.src='images/index/devote.png'" alt="奉獻愛心"></button>
+                <button id="button_contact"><img src="images/index/message.svg" onerror="this.src='images/index/message.png'" alt="線上留言"></button>
+            </div>
+        </div>
+        <div class="footer_block" id="fb_plugin"><iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Frenewalf&amp;width&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:258px;" allowTransparency="true"></iframe></div>
+    </footer>
+    
+    <div id="dialog-overlay"></div>
+    <div id="dialog-box">
+        <div id="dialog-close"><i class="fa fa-times"></i></div>
+        <iframe src="html/index/map.html" class="dialog-content" frameborder="0"></iframe>
+        <div id="dialog-div" class="dialog-content"></div>
+    </div>
+    <div id="dialog_donate">
+        <div id="dialog-close"><i class="fa fa-times"></i></div>
+        <div id="dialog_donate_content"></div>
+    </div>
+    <div id="toTop">^</div>
+</body>
+
+</html>

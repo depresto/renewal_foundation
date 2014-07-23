@@ -1,0 +1,170 @@
+<!-- Segment -->
+<script type="text/javascript">
+	$('.segment_div a').click(function (e) {
+		query = $(this).attr('href').split('?')[1];
+		curHeight = $(this).siblings('img').height();
+		curWidth = $(this).siblings('img').width();
+		$(this).siblings('img').css('width', '950px').css('height', 'auto');
+		autoHeight = $(this).siblings('img').height();
+		$(this).siblings('img').width(curWidth).height(curHeight).animate({
+			width: '950px',
+			height: autoHeight
+		}, 500);
+		$(this).siblings('img').css({
+			'-webkit-clip-path': 'polygon(0 0,0 800px,960px 800px,960px 0px)',
+			'-moz-clip-path': 'polygon(0 0,0 800px,960px 800px,960px 0px)',
+			'-ms-clip-path': 'polygon(0 0,0 800px,960px 800px,960px 0px)',
+			'-o-clip-path': 'polygon(0 0,0 800px,960px 800px,960px 0px)',
+			'clip-path': 'polygon(0 0,0 800px,960px 550px,960px 0px)'
+		});
+		$('#segment_title').animate({
+			marginBottom: '0px'
+		}, 500);
+		$('#segment2').animate({
+			top: '74px'
+		}, 500);
+		setTimeout(function () {
+			loadMenuContent(query, false, false);
+		}, 700);
+		e.preventDefault();
+	});
+</script>
+<style>
+	.segment_div {
+		position: relative;
+		overflow: auto;
+	}
+	.segment_div img {
+		height: 550px;
+		width: auto;
+	}
+	.segment_div div span {
+		background: rgba(0, 0, 0, 0.6);
+		text-shadow: 2px 2px 10px #000;
+		color: #fff;
+		font-size: 28px;
+		position: absolute;
+		padding: 10px 25px;
+	}
+	.segment_div a {
+		position: absolute;
+		width: 475px;
+		height: 550px;
+		z-index: 5;
+	}
+	#segment1 a {
+		top: 0;
+		left: 0;
+		-webkit-transition: z-index 0s 2s;
+		-moz-transition: z-index 0s 2s;
+		-ms-transition: z-index 0s 2s;
+		-o-transition: z-index 0s 2s;
+		transition: z-index 0s 2s;
+	}
+	#segment1 span {
+		top: 20px;
+		left: 20px;
+	}
+	#segment2 a {
+		bottom: 0;
+		right: 0;
+		-webkit-transition: z-index 0s 2s;
+		-moz-transition: z-index 0s 2s;
+		-ms-transition: z-index 0s 2s;
+		-o-transition: z-index 0s 2s;
+		transition: z-index 0s 2s;
+	}
+	#segment2 span {
+		bottom: 20px;
+		right: 20px;
+	}
+	#segment1 img {
+		position: relative;
+		z-index: 1;
+		-webkit-clip-path: polygon(0 0, 0 550px, 365px 550px, 515px 0px);
+		-moz-clip-path: polygon(0 0, 0 550px, 365px 550px, 515px 0px);
+		-ms-clip-path: polygon(0 0, 0 550px, 365px 550px, 515px 0px);
+		clip-path: polygon(0 0, 0 550px, 365px 550px, 515px 0px);
+		-webkit-transition: -webkit-clip-path 2s, z-index 0s 2s;
+		-moz-transition: -moz-clip-path 2s, z-index 0s 2s;
+		-ms-transition: -ms-clip-path all 2s, z-index 0s 2s;
+		-o-transition: -o-clip-path 2s, z-index 0s 2s;
+		transition: clip-path all 2s, z-index 0s 2s;
+	}
+	#segment1 a:hover ~ img {
+		z-index: 9;
+		-webkit-clip-path: polygon(0 0, 0 550px, 950px 550px, 950px 0px);
+		-moz-clip-path: polygon(0 0, 0 550px, 950px 550px, 950px 0px);
+		-ms-clip-path: polygon(0 0, 0 550px, 950px 550px, 950px 0px);
+		-o-clip-path: polygon(0 0, 0 550px, 950px 550px, 950px 0px);
+		clip-path: polygon(0 0, 0 550px, 950px 550px, 950px 0px);
+		-webkit-transition-delay: 0s;
+		-moz-transition-delay: 0s;
+		-ms-transition-delay: 0s;
+		-o-transition-delay: 0s;
+		transition-delay: 0s;
+	}
+	#segment1 a:hover {
+		z-index: 10;
+		-webkit-transition-delay: 0s;
+		-moz-transition-delay: 0s;
+		-ms-transition-delay: 0s;
+		-o-transition-delay: 0s;
+		transition-delay: 0s;
+	}
+	#segment2 img {
+		position: relative;
+		z-index: 1;
+		-webkit-clip-path: polygon(400px 0px, 250px 550px, 900px 550px, 900px 0px);
+		-moz-clip-path: polygon(400px 0px, 250px 550px, 900px 550px, 900px 0px);
+		-ms-clip-path: polygon(400px 0px, 250px 550px, 900px 550px, 900px 0px);
+		clip-path: polygon(200px 0px, 150px 550px, 900px 550px, 900px 0px);
+		-webkit-transition: -webkit-clip-path 2s, z-index 0s 2s;
+		-moz-transition: -moz-clip-path 2s, z-index 0s 2s;
+		-ms-transition: -ms-clip-path all 2s, z-index 0s 2s;
+		-o-transition: -o-clip-path 2s, z-index 0s 2s;
+		transition: clip-path all 2s, z-index 0s 2s;
+	}
+	#segment2 a:hover ~ img {
+		z-index: 9;
+		-webkit-clip-path: polygon(0 0, 0 550px, 950px 550px, 950px 0px);
+		-moz-clip-path: polygon(0 0, 0 550px, 950px 550px, 950px 0px);
+		-ms-clip-path: polygon(0 0, 0 550px, 950px 550px, 950px 0px);
+		-o-clip-path: polygon(0 0, 0 550px, 950px 550px, 950px 0px);
+		clip-path: polygon(0 0, 0 550px, 950px 550px, 950px 0px);
+		-webkit-transition-delay: 0s;
+		-moz-transition-delay: 0s;
+		-ms-transition-delay: 0s;
+		-o-transition-delay: 0s;
+		transition-delay: 0s;
+	}
+	#segment2 a:hover {
+		z-index: 10;
+		-webkit-transition-delay: 0s;
+		-moz-transition-delay: 0s;
+		-ms-transition-delay: 0s;
+		-o-transition-delay: 0s;
+		transition-delay: 0s;
+	}
+	#segment2 {
+		top: 79px;
+		right: 0;
+		position: absolute;
+	}
+</style>
+
+<div class="page_title title_about">分事務所介紹</div>
+<div id="segment1" class="segment_div">
+	<a href="?about&segment1">
+		<div><span>花蓮分事務所</span>
+		</div>
+	</a>
+	<img src="../../images/about/segment/1.jpg">
+</div>
+<div id="segment2" class="segment_div">
+	<a href="?about&segment2">
+		<div><span>內湖社區大學</span>
+		</div>
+	</a>
+	<img src="../../images/about/segment/2.jpg">
+</div>
