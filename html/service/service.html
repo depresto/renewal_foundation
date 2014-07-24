@@ -1,13 +1,14 @@
 <!--Service-->
 <style>
 	#service_content {
-		overflow: hidden;	
+		overflow: hidden;
 	}
 	.service_div {
 		width: 25%;
 		height: 600px;
 		display: inline-block;
 		float: left;
+		position: relative;
 	}
 	.service_div img {
 		width: 100%;
@@ -15,13 +16,27 @@
 	}
 	.service_div p {
 		position: absolute;
+		right: 20px; top: 20px;
+		margin: 0;
+		font-size: 40px;
+		text-shadow: 3px 3px 1px #303030;
+		width: 40px;
+		color: #fff;
 	}
 </style>
+<script>
+	$('.service_content a').click(function(e){
+		e.preventDefault();
+		query = $(this).attr('href').split('?')[1];
+		loadMenuContent(query, false, false);
+		//loadMenuContent(query,isPopState,isHomePage)
+	});
+</script>
 
-<div class="page_title tile_service">服務內容</div>
+<div class="page_title title_service">服務內容</div>
 <div id="service_content">
-	<div id="service_seg1" class="service_div"><p>課後輔導</p><img src="../../images/service/1.jpg"></div>	
-	<div id="service_seg2" class="service_div"><p>愛心書屋</p><img src="../../images/service/2.jpg"></div>
-	<div id="service_seg3" class="service_div"><p>品格教育</p><img src=""></div>
-	<div id="service_seg4" class="service_div"><p>愛心圖書室</p><img src=""></div>
+	<a href="?service&hualien"><div id="service_seg1" class="service_div"><p>花蓮分事務所</p><img src="images/service/1.jpg"></div></a>
+	<a href="?service&neihu"><div id="service_seg2" class="service_div"><p>內湖社區大學</p><img src="images/service/2.jpg"></div></a>
+	<a href="?service&xinhua"><div id="service_seg3" class="service_div"><p>新華愛心教育基金會</p><img src=""></div></a>
+	<a href="?service&usa"><div id="service_seg4" class="service_div"><p>美國愛基會</p><img src=""></div></a>
 </div>

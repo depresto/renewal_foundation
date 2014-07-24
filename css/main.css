@@ -158,73 +158,9 @@ marquee {
 	background: #003153;
 }
 .title_service {
+	background: #e86751;
+}
 
-}
-/*Sidebar
-=========================================================*/
-
-#sidebar {
-    position: fixed;
-    top: 50%;
-    width: 180px;
-    text-align: center;
-    background: #f29630;
-    color: #fff;
-    left: -200px;
-}
-.sidebar_title {
-    padding-top: 15px;
-    font-weight: 700;
-    font-size: 28px;
-}
-.sidebar_content {
-    font-size: 20px;
-    padding-left: 0;
-    margin-top: 10px;
-}
-.sidebar_content li,.sidebar_content ul {
-    line-height: 40px;
-    position: relative;
-    padding: 0;
-}
-.sidebar_content li:after {
-    content: '';
-    position: absolute;
-    left: 180px;
-    top: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 20px 0 20px 20px;
-    border-color: transparent transparent transparent #b9762c;
-    display: none;
-}
-.sidebar_content li:hover {
-    background: #b9762c;
-}
-.sidebar_content li:hover::after {
-    display: block;
-}
-.sidebar_content li a {
-	display: inline-block;
-}
-.sidebar_sub {
-    display: none;
-	text-align: left;
-}
-.sidebar_sub:before {
-    content: "> ";
-	padding-left: 25px;
-}
-.sidebar_content ul:hover li {
-    display: block;
-}
-#sidebar_current {
-    background: #b9762c;
-}
-#sidebar_current:after {
-    display: block;
-}
 /*Footer
 =========================================================*/
 footer {
