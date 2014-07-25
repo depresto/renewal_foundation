@@ -21,7 +21,7 @@
 <script>
 	width = $('.service_hualien').width();
 	$('.service_hualien').css({'height':width+'px'});
-	$('.service_hualien a').click(function(e){
+	$('#service_hualien_content a').click(function(e){
 		e.preventDefault();
 		query = $(this).attr('href').split('?')[1];
 		loadMenuContent(query, false, false);
@@ -31,8 +31,8 @@
 
 <div class="page_title title_service">花蓮分事務所</div>
 <div id="service_hualien_content">
-	<a href="?service&hualien-1"><div class="service_hualien"><p>課後輔導</p><img src=""></div></a>
+	<a href="?service&hualien-1-1"><div class="service_hualien"><p>課後輔導</p><img src=""></div></a>
 	<a href="?service&hualien-2"><div class="service_hualien"><p>愛心書屋</p><img src=""></div></a>
 	<a href="?service&hualien-3"><div class="service_hualien"><p>品格教育</p><img src=""></div></a>
-	<a href="?service&hualien-4"><div class="service_hualien"><p>愛心圖書室</p><img src=""></div></a>
+	<a href="?service&hualien-4-1"><div class="service_hualien"><p>愛心圖書室</p><img src=""></div></a>
 </div>

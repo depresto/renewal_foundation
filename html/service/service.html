@@ -25,7 +25,7 @@
 	}
 </style>
 <script>
-	$('.service_content a').click(function(e){
+	$('#service_content a').click(function(e){
 		e.preventDefault();
 		query = $(this).attr('href').split('?')[1];
 		loadMenuContent(query, false, false);

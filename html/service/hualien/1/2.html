@@ -1,0 +1,60 @@
+<script>
+	var tinyMap = "js/jquery.tinyMap-2.8.1.min.js";
+	$.getScript(tinyMap,function(){
+		$('#service_hualien_map').tinyMap({
+			center : {x:'23.6282786',y:'121.403496'},
+			zoom : 9,
+			marker: [
+				{addr: ['23.6852286','121.40775'], text: '花蓮縣萬榮鄉馬太鞍社區'},
+				{addr: ['23.5189365','121.2645845'], text: '花蓮縣卓溪鄉崙山村'},
+				{addr: ['23.647471','121.297546'], text: '花蓮縣萬榮鄉馬遠村'},
+				{addr: ['23.2299875','121.308025'], text: '花蓮縣富里鄉新興村'},
+				{addr: ['23.7454643','121.4612987'], text: '花蓮縣鳳林鎮'},
+				{addr: ['23.6282786','121.403496'], text: '花蓮縣光復鄉大興村大興社區'},
+				{addr: ['23.265368','121.302907'], text: '花蓮縣富里鄉東里村'},
+				{addr: ['23.8410445','121.502684'], text: '花蓮縣壽豐鄉豐裡村'}
+			],
+			event: {
+				'mouseover':{
+					'func': function (e){
+						$('#service_hualien_1_2 h1').fadeOut();
+					},
+					'once': true|false
+				},
+				'click': function(e){
+
+				}
+			}
+		});
+	});
+</script>
+<style>
+	#service_hualien_1_2 {
+		height: 400px;
+		width: 100%;
+	}
+	#service_hualien_1_2 h1 {
+		z-index: 99;
+		position: absolute;
+		left: 50%;	right: 50%;	top: 50%;	bottom: 50%;
+		width: 500px;
+		height: 65px;
+		text-align: center;
+		margin-left: -250px;
+		margin-top: -10px;
+		font-size: 50px;
+		color: #fff;
+		text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+		background: rgba(0, 0, 0, 0.7);
+	}
+	#service_hualien_map {
+		width: 100%;
+		height: 400px;
+	}
+</style>
+
+<div class="page_title title_service">服務成果</div>
+<div id="service_hualien_1_2">
+	<h1>請點選地圖標記</h1>
+	<div id="service_hualien_map"></div>
+</div>
