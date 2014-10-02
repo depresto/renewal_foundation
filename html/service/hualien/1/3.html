@@ -1,0 +1,181 @@
+<script>
+	$.getScript('js/turn.min.js',function(){
+		book_height = '100%';
+		book_width = '90%';
+		$('#flipbook').turn({
+			width: book_width,
+			height: book_height,
+			display: 'double',
+		});
+		$('#flipbook').css('margin-right','250px');
+		$('#next_page').css('right','250px');
+		$('#previous_page').css('display','none');
+	});
+	$('#next_page').click(function(){
+		$('#flipbook').turn('next');
+		$('#next_page').css('right','5%');
+		$('#previous_page').css('display','block');
+		$('#flipbook').animate({
+			marginRight: '5%'
+		},500);
+	})
+	$('#previous_page').click(function(){
+		$('#flipbook').turn('previous');
+		if ($('#flipbook').turn('page') == 1){
+			$('#flipbook').animate({
+				marginRight: 250
+			},500);
+			$('#next_page').css('right','250px');
+			$('#previous_page').css('display','none');
+		}
+	});
+	$('.service_hualien_content_bar a').click(function(e){
+		e.preventDefault();
+		query = $(this).attr('href').split('?')[1];
+		loadMenuContent(query, false, false);
+		//loadMenuContent(query,isPopState,isHomePage)
+	});
+</script>
+<style>
+	#service_hualien_1_3 p {
+		width: 80%;
+		margin:30px 10%;
+	}
+	#service_hualien_1_3 b {
+		font-size: 30px;
+	}
+	#service_hualien_1_3 ol {
+		list-style: none;
+		counter-reset: li-counter;
+	}
+	#service_hualien_1_3 ol li {
+		position: relative;
+		counter-increment: li-counter;
+	}
+	#service_hualien_1_3 ol li:before {
+		position: absolute;
+		left: 30px;
+		top: 10px;
+		content: counter(li-counter)'.';
+		font-size: 35px;
+		font-weight: 700;
+	}
+	#book_bg {
+		width: 950px;
+		height: 600px;
+		padding: 30px 0;
+		position: relative;
+		background: #dcdcdc;
+	}
+	#flipbook {
+		margin: 0 auto;
+	}
+	#flipbook div img {
+		max-width: 100%;
+		height: 100%;
+	}
+	.hard {
+		background: #bbb;
+	}
+	#book_tag {
+		position: absolute;
+		left: 50%;
+		right: 50%;
+		width: 500px;
+		top: 270px;
+		height: 65px;
+		text-align: center;
+		margin-left: -250px;
+		font-size: 50px;
+		line-height: 65px;
+		color: #fff;
+		text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+		background: rgba(0, 0, 0, 0.7);
+		z-index: 100;
+		-webkit-transition: .5s;
+		-o-transition: .5s;
+		transition: .5s;
+	}
+	#book_bg:hover #book_tag {
+		text-shadow: 1px 1px 2px rgba(150, 150, 150, 0);
+		background: transparent;
+		z-index: -1;
+	}
+	.book_page {
+		position: absolute;
+		height: 90%;
+		width: 45%;
+		z-index: 100;
+		color: transparent;
+		background: transparent;
+		-webkit-transition: .5s;
+		-o-transition: .5s;
+		transition: .5s;
+	}
+	#next_page {
+		right: 5%;
+	}
+	#previous_page {
+		left: 5%;
+	}
+</style>
+
+<div class="page_title title_service">孩子的故事</div>
+<div class="service_hualien_content_bar">
+	<a href="?service&hualien-1-1">
+		<div>簡介</div>
+	</a>
+	<a href="?service&hualien-1-2">
+		<div>服務成果</div>
+	</a>
+	<div>孩子的故事</div>
+</div>
+<div id="service_hualien_1_3" class="page_content">
+	<p><span>貧</span>困家庭的孩子將來靠什麼翻身呢? 大家都認同「教育」是最好的方式。我們在偏遠地區辦理國小、國中及外籍配偶子女的夜間課輔就是想透過教育改變孩子們的人生方向。 近六年來我們看見孩子們因為晚上時間有效運用、努力學習後的改變，心裡十分感動與欣慰，若沒有許多捐款人的愛心，孩子們也不會有這樣的成長。 最近，長期支持我們並對原住民課後輔導投注許多心力的趙天星董事長及其家人，在插畫家巧可Choko的巧手下，將偏遠地區孩子的處境與困難繪製成書籍「星空下的讀聲」，期盼大家共同關注弱勢孩童的教育問題，許孩子一個希望。</p>
+	<div id="book_bg">
+		<span id="book_tag">請點擊頁面翻頁</span>
+		<span id="next_page" class="book_page"></span>
+		<span id="previous_page" class="book_page"></span>
+		<div id="flipbook">
+			<div><img src="images/service/hualien/book/book1.jpg" alt="page1"></div>
+			<div class="hard"></div>
+			<div><img src="images/service/hualien/book/book2.jpg" alt="page2"></div>
+			<div><img src="images/service/hualien/book/book3.jpg" alt="page3"></div>
+			<div><img src="images/service/hualien/book/book4.jpg" alt="page4"></div>
+			<div><img src="images/service/hualien/book/book5.jpg" alt="page5"></div>
+			<div><img src="images/service/hualien/book/book6.jpg" alt="page6"></div>
+			<div><img src="images/service/hualien/book/book7.jpg" alt="page7"></div>
+			<div><img src="images/service/hualien/book/book8.jpg" alt="page8"></div>
+			<div><img src="images/service/hualien/book/book9.jpg" alt="page9"></div>
+			<div><img src="images/service/hualien/book/book10.jpg" alt="page10"></div>
+			<div><img src="images/service/hualien/book/book11.jpg" alt="page11"></div>
+			<div><img src="images/service/hualien/book/book12.jpg" alt="page12"></div>
+			<div><img src="images/service/hualien/book/book13.jpg" alt="page13"></div>
+			<div><img src="images/service/hualien/book/book14.jpg" alt="page14"></div>
+			<div><img src="images/service/hualien/book/book15.jpg" alt="page15"></div>
+			<div><img src="images/service/hualien/book/book16.jpg" alt="page16"></div>
+			<div><img src="images/service/hualien/book/book17.jpg" alt="page17"></div>
+			<div class="hard"></div>
+			<div><img src="images/service/hualien/book/book18.jpg" alt="page18"></div>
+		</div>
+	</div>
+	<p><b>另還有其他孩子的故事，與大家分享：</b></p>
+	<ol>
+		<li><p>六年級的雅齡，她那曾當警察的父親在六年前車禍身亡，母親隔年改嫁後，她和哥哥2人就跟著爺爺奶奶一起生活，從小學四年級開始參加夜間課輔，老師特別注意雅齡的人格成長，雅齡的奶奶好擔心，不知如何解決孫女成長心智上所遇到的問題，因為雅齡是一個極度敏感的女孩，一些非常平常的對話，往往一不小心就會傷害她，而近二年來老師除了指導雅齡課業，更陪伴雅齡健康成長，雅齡的奶奶看到孫女平安正常，終於露出欣慰的微笑。</p></li>
+		<li>
+			<p>秀莉是八年級的學生，父母雙雙失業待業中，是低收入戶，個性內向，讀書非常專注，成績優異，雖已升上國中了，下課後還是回到小學，吃過本會提供的晚餐後，就坐在教室裡夜讀，過去小學的班導師也會給予鼓勵與指導，她打算將來考護專，早一點就業幫忙家計。</p>
+		</li>
+		<li>
+			<p>恩典的父親失業已近兩年，沒工作時就上山打獵摘採野菜，生活非常清苦，恩典了解家庭狀況，未來可以改變家計的方法是老師說的：以教育來脫離貧窮。所以恩典在夜間課輔班特別用功，在學校教室，有別於家裡沒有書桌的讀書環境，遇到問題還可以隨時請教老師，一學期下來成績明顯進步，在部落中與恩典一樣情況的個案不在少數，本會將給予特別關懷與協助。</p>
+		</li>
+		<li>
+			<p>六年級證廣父親中風臥病在床，母親為外籍配偶，父親中風後母親已離家二年，既屬低收入戶，又是家庭結構失常，這種學童最需要夜間課輔的協助，晚上回到學校繼續夜讀，對實力的提升大有幫助，然而證廣懂事、有自信，也經常與同學分享照顧父親經驗。</p>
+		</li>
+		<li>
+			<p>小晨家庭經濟清寒，目前僅僅以父親打零工稍稍貼補。小晨升上國中後就立志，將來要考軍校，因為軍校免學雜費，家中水電還有補貼，就學期間有生活費，綜合以上優惠，小小年紀就立下志向，除了可以繼續升學，家庭不必有很大的負擔，弟弟妹妹的學費可以從他讀軍校省下的費用去讀一般高中，讓弟妹求學之路更順暢，同時減輕父母親的負擔。指導老師特別加強小晨的英語，希望在未來的考試能夠拿到好成績。</p>
+		</li>
+		<li>
+			<p>小龍在家排行老大，後面還有三位妹妹，因為家境貧困，為了減低父母親的經濟負擔，選擇就讀花蓮體育實驗高中，並將原本自己的強項足球轉成舉重，希望努力練習參加比賽，爭取擔任國家代表隊的機會，得獎了才能改善家裡的經濟情況。 目前小龍也是全班英文進步最多的學生，打從一開始，因為基礎不好，對於念書又沒有興趣，別說是開口說英文了。在得知本會在花體開設課輔班後，他抱著嘗試的心情報名，想說住校晚上那裡也不能去，利用晚上學英文也好，沒有想到經過一年的學習之後，發現自己對於英文開始產生興趣，便認真努力起來。現在，小龍出去比賽，若遇見國外人士，不再害怕說話，反而敢開口介紹自己和自己的運動強項。小龍說：『雖然說的能力還是不夠好，但比以前好多了。』</p>
+		</li>
+	</ol>
+</div>

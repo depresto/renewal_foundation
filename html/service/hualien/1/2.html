@@ -1,42 +1,160 @@
 <script>
 	var tinyMap = "js/jquery.tinyMap-2.8.1.min.js";
-	$.getScript(tinyMap,function(){
+	$.getScript(tinyMap, function () {
 		$('#service_hualien_map').tinyMap({
-			center : {x:'23.6282786',y:'121.403496'},
-			zoom : 9,
+			disableDefaultUI: true,
+			draggable: false,
+			disableDoubleClickZoom: true,
+			scrollwheel: false,
+			keyboardShortcuts: false,
+			center: {
+				x: '23.5682786',
+				y: '121.403496'
+			},
+			zoom: 10,
 			marker: [
-				{addr: ['23.6852286','121.40775'], text: '花蓮縣萬榮鄉馬太鞍社區'},
-				{addr: ['23.5189365','121.2645845'], text: '花蓮縣卓溪鄉崙山村'},
-				{addr: ['23.647471','121.297546'], text: '花蓮縣萬榮鄉馬遠村'},
-				{addr: ['23.2299875','121.308025'], text: '花蓮縣富里鄉新興村'},
-				{addr: ['23.7454643','121.4612987'], text: '花蓮縣鳳林鎮'},
-				{addr: ['23.6282786','121.403496'], text: '花蓮縣光復鄉大興村大興社區'},
-				{addr: ['23.265368','121.302907'], text: '花蓮縣富里鄉東里村'},
-				{addr: ['23.8410445','121.502684'], text: '花蓮縣壽豐鄉豐裡村'}
+				{
+					addr: ['23.6852286', '121.40775'],
+					text: '花蓮縣萬榮鄉馬太鞍社區',
+					id: 'hualien_map_01',
+					event: function () {
+						$('#service_hualien_map').animate({
+							height:350
+						},500);
+						$('#service_hualien_1_2_content div').slideUp();
+						$('#service_hualien_map').tinyMap('panto','23.3382786,121.403496');
+						$('#service_hualien_map').tinyMap('modify',{zoom:9});
+						$('div[name='+$(this).attr('id')+']').slideDown();
+					}
+				},
+				{
+					addr: ['23.5189365', '121.2645845'],
+					text: '花蓮縣卓溪鄉崙山村',
+					id: 'hualien_map_02',
+					event: function () {
+						$('#service_hualien_map').animate({
+							height:350
+						},500);
+						$('#service_hualien_1_2_content div').slideUp();
+						$('#service_hualien_map').tinyMap('panto','23.3382786,121.403496');
+						$('#service_hualien_map').tinyMap('modify',{zoom:9});
+						$('div[name='+$(this).attr('id')+']').slideDown();
+					}
+				},
+				{
+					addr: ['23.647471', '121.297546'],
+					text: '花蓮縣萬榮鄉馬遠村',
+					id: 'hualien_map_03',
+					event: function () {
+						$('#service_hualien_map').animate({
+							height:350
+						},500);
+						$('#service_hualien_1_2_content div').slideUp();
+						$('#service_hualien_map').tinyMap('panto','23.3382786,121.403496');
+						$('#service_hualien_map').tinyMap('modify',{zoom:9});
+						$('div[name='+$(this).attr('id')+']').slideDown();
+					}
+				},
+				{
+					addr: ['23.2299875', '121.308025'],
+					text: '花蓮縣富里鄉新興村',
+					id: 'hualien_map_04',
+					event: function () {
+						$('#service_hualien_map').animate({
+							height:350
+						},500);
+						$('#service_hualien_1_2_content div').slideUp();
+						$('#service_hualien_map').tinyMap('panto','23.3382786,121.403496');
+						$('#service_hualien_map').tinyMap('modify',{zoom:9});
+						$('div[name='+$(this).attr('id')+']').slideDown();
+					}
+				},
+				{
+					addr: ['23.7454643', '121.4612987'],
+					text: '花蓮縣鳳林鎮',
+					id: 'hualien_map_05',
+					event: function () {
+						$('#service_hualien_map').animate({
+							height:350
+						},500);
+						$('#service_hualien_1_2_content div').slideUp();
+						$('#service_hualien_map').tinyMap('panto','23.3382786,121.403496');
+						$('#service_hualien_map').tinyMap('modify',{zoom:9});
+						$('div[name='+$(this).attr('id')+']').slideDown();
+					}
+				},
+				{
+					addr: ['23.6282786', '121.403496'],
+					text: '花蓮縣光復鄉大興村大興社區',
+					id: 'hualien_map_06',
+					event: function () {
+						$('#service_hualien_map').animate({
+							height:350
+						},500);
+						$('#service_hualien_1_2_content div').slideUp();
+						$('#service_hualien_map').tinyMap('panto','23.3382786,121.403496');
+						$('#service_hualien_map').tinyMap('modify',{zoom:9});
+						$('div[name='+$(this).attr('id')+']').slideDown();
+					}
+				},
+				{
+					addr: ['23.265368', '121.302907'],
+					text: '花蓮縣富里鄉東里村',
+					id: 'hualien_map_07',
+					event: function () {
+						$('#service_hualien_map').animate({
+							height:350
+						},500);
+						$('#service_hualien_1_2_content div').slideUp();
+						$('#service_hualien_map').tinyMap('panto','23.3382786,121.403496');
+						$('#service_hualien_map').tinyMap('modify',{zoom:9});
+						$('div[name='+$(this).attr('id')+']').slideDown();
+					}
+				},
+				{
+					addr: ['23.8410445', '121.502684'],
+					text: '花蓮縣壽豐鄉豐裡村',
+					id: 'hualien_map_08',
+					event: function () {
+						$('#service_hualien_map').animate({
+							height:350
+						},500);
+						$('#service_hualien_1_2_content div').slideUp();
+						$('#service_hualien_map').tinyMap('panto','23.3382786,121.403496');
+						$('#service_hualien_map').tinyMap('modify',{zoom:9});
+						$('div[name='+$(this).attr('id')+']').slideDown();
+					}
+				}
 			],
 			event: {
-				'mouseover':{
-					'func': function (e){
+				'mouseover': {
+					'func': function (e) {
 						$('#service_hualien_1_2 h1').fadeOut();
 					},
-					'once': true|false
-				},
-				'click': function(e){
-
+					'once': true | false
 				}
 			}
 		});
 	});
+	$('.service_hualien_content_bar a').click(function(e){
+		e.preventDefault();
+		query = $(this).attr('href').split('?')[1];
+		loadMenuContent(query, false, false);
+		//loadMenuContent(query,isPopState,isHomePage)
+	});
 </script>
 <style>
 	#service_hualien_1_2 {
-		height: 400px;
+		height: auto;
 		width: 100%;
 	}
-	#service_hualien_1_2 h1 {
+	#service_hualien_1_2 > h1 {
 		z-index: 99;
 		position: absolute;
-		left: 50%;	right: 50%;	top: 50%;	bottom: 50%;
+		left: 50%;
+		right: 50%;
+		top: 50%;
+		bottom: 50%;
 		width: 500px;
 		height: 65px;
 		text-align: center;
@@ -49,12 +167,88 @@
 	}
 	#service_hualien_map {
 		width: 100%;
-		height: 400px;
+		height: 600px;
+	}
+	#service_hualien_1_2_content > div {
+		height: 100%;
+		width: 80%;
+		margin: 30px 10%;
+		display: none;
+	}
+	.page_content big {
+
 	}
 </style>
 
 <div class="page_title title_service">服務成果</div>
+<div class="service_hualien_content_bar">
+	<a href="?service&hualien-1-1">
+		<div>簡介</div>
+	</a>
+	<div>服務成果</div>
+	<a href="?service&hualien-1-3">
+		<div>孩子的故事</div>
+	</a>
+</div>
 <div id="service_hualien_1_2">
 	<h1>請點選地圖標記</h1>
 	<div id="service_hualien_map"></div>
+</div>
+<div id="service_hualien_1_2_content">
+	<div name="hualien_map_01" class="page_content">
+		<h2>花蓮縣萬榮鄉馬太鞍社區</h2>
+		<big>受益人數: 7人/1班</big>
+		<p><span>馬</span>太鞍社區位於半山腰，距離學校較遠，學生每天需要下山去上學。此區原住民成人晚上常常群聚住家門口喝酒聊天，孩童就在社區街道上玩耍，沒有夜間學習的習慣。</p>
+		<p>在當地牧師的邀請下，了解社區型態，不願社區的孩童每天在這樣的環境下成長，評估晚上讓學童下山到校上夜輔也有安全上的考量，因此商借社區活動中心，安排老師上山開設課輔，期許能慢慢的改善、訓練孩童夜間讀書習慣。</p>
+		<p>社區中有三兄妹同時參加課輔，小傑(小四)成績不錯，喜愛數學、小婷(小三)喜歡國語，寫著一手好字、小偉(小一)則是因為年紀還小，喜歡畫畫。老師指出，這三兄妹常因爸爸酒醉被打，影響上課心情。</p>
+		<p>另一位叫小蓉的，有一雙大眼睛，表情靦腆，剛來時很膽怯，經過老師不斷的鼓勵與教導，成績進步很多，學校老師告訴我們，小蓉還有很大的進步潛力。由於這個社區非常特殊，家長毫不關心自己的孩子，雖然我們很想拉拔他們，若是沒有家長的配合，只能看見短效，長期來說還是無法持續，我們為此陷入續辦與否的兩難之中。</p>
+	</div>
+	<div name="hualien_map_02" class="page_content">
+		<h2>花蓮縣卓溪鄉崙山村</h2>
+		<big>參加人數: 26人/2班</big>
+		<p><span>這</span>是一所孤立於山上的小學，進出交通極為不便，由於人口外流嚴重，學生人數只剩30幾位，且都是來自隔代家庭，在山上沒有標竿人物可供仿傚，也缺乏文化刺激，好像是遺世而居的一群。</p>
+		<p>除了少數住家較遠無法參加課輔外，幾乎全校參加，布農學童性情溫順，上課時都很安靜、很乖。</p>
+		<p>讀書是窮人翻身最好且唯一的方法，為了協助學童利用晚上時間繼續學習，從去年9月起在學校開設夜間課輔，每晚2小時在老師的陪伴和指導之下，讓學童完成學校指定作業，並加強白天所教的學科，經過一年的夜輔，成績進步了，但還有很大的空間可以努力，不過學童的生活作息，行為表現，讀書態度倒有明顯的改善，深盼學童的學習會因此繼續改善，進而影響家庭對教育的重視。</p>
+	</div>
+	<div name="hualien_map_03" class="page_content">
+		<h2>花蓮縣萬榮鄉馬遠村</h2>
+		<big>參加人數: 24人/2班</big>
+		<p><span>在</span>偏遠部落小學除了各項資源欠缺之外，家庭功能不彰更是教育的瓶頸，家長把時間花在家庭經濟問題上，孩子的教育丟給學校，認為學校必需負起孩子所有的教育責任，這是偏遠部落家長的普遍性心態。</p>
+		<p>佳欣是個頭嬌小剪個男生髮型的女生，原本個性叛逆，經課輔班輔導後，個性改變，過去很少與同儕說話，主要原因是自己功課不好，自卑感使自己疏離同學，甚至封閉自己，老師很擔心孩子未來的發展，利用夜間課輔加以輔導，佳欣變的開朗活潑，一掃先前悶悶不樂的陰霾，因為夜間課輔讓佳欣的功課進步了，她不再自卑。</p>
+		<p>生活的樂趣居然是每周三天的夜間課輔，和其他同學一樣，到教室先寫回家功課，經老師檢查後，繼續寫老師發下的測驗卷，有問題可以立即發問，孩子在這樣的教學環境下充分練習，擺脫白天上課的嚴肅，老師將孩子的程度分級適才而教，其實大多數的家長相信孩子的進步來自努力，可是忽略了方法和家庭功能，孩子當然不願意永遠排名在班上的最後，而在夜間課輔班有著老師的鼓勵，我們看到孩子一天比一天進步，可喜的是進步的動力來自於孩子自身的省悟。</p>
+	</div>
+	<div name="hualien_map_04" class="page_content">
+		<h2>花蓮縣富里鄉新興村</h2>
+		<big>參加人數: 24人/1班</big>
+		<p><span>有</span>三成學生來自於卓溪鄉偏遠部落的崙天、古楓原住民族孩子，住在學校鄰近的學生通常優先考慮距離不遠的兩所國中，因為近幾年來這兩所國中的升學率頗高，吸走了許多家庭經濟狀況較好的學生，留下來的多屬社經地位較差家庭的學生，學校的教學團隊雖然有一群熱情的老師，但學生及家長的配合度不高，一直陷在成效不彰的境地。</p>
+		<p>97學年下學期本會以試辦方式，為九年級學生辦理夜間課輔，學生出席率九成以上，經過一學期師生共同努力，今年學測比去年平均分數進步了20分，指導老師表示以偏遠地區的教學，能有這樣的成效是非常難得，但是要達到一般水準還有很大的進步空間，半年的時間是短了一些，在期末的檢討會上，校方希望本會能長期在該校辦理夜間課輔，甚至連七、八年級的學生都納入輔助，老師們說有信心把孩子教得更好。</p>
+	</div>
+	<div name="hualien_map_05" class="page_content">
+		<h2>花蓮縣鳳林鎮</h2>
+		<big>參加人數: 45人/2班</big>
+		<p><span>這</span>是一所位於台九線省道公路旁的原住民國中，學生來自鄰近三所國小畢業生，目前參加課輔班的學生多數為單親、隔代教養及貧困家庭的孩子。</p>
+		<p>參加課輔的學生中，一位學生小敏讓老師十分驚喜，成績突飛猛進，一、二年級時，因為好玩，不愛念書，荒廢了學業，在班上的成績常名列於倒數。</p>
+		<p>隨著年齡的成長，升上三年級時，為了體諒父母親工作辛勞，立志要考上護專，減低家庭負擔，於是開始發奮圖強，每天除了上課認真、參加夜輔、回家更是認真的複習白天學校所教的課業。</p>
+		<p>夜輔英文老師指出，小敏的英文進步最多，從原本什麼都聽不懂，程度只停留在國小A、B、C字母階段，卻在自己努力念書，勤奮不懈的學習下，於學校最後兩次模擬考成績中，進步到40多分，不僅如此，在最後一次學校模擬考測驗中，更進步到全班第四名，堪稱學校夜輔班中最佳進步獎得主。</p>
+	</div>
+	<div name="hualien_map_06" class="page_content">
+		<h2>花蓮縣光復鄉大興村大興社區</h2>
+		<big>參加人數: 15人/1班</big>
+		<p><span>大</span>興社區曾經是一個被颱風重創，土石淹沒，從地圖上幾乎消失的原住民部落，但堅忍的生命力，使這個部落在百廢中重建，在此地的教會以上帝的愛疼惜這個社區，從颱風肆虐後一路陪伴村民重建家園、安撫受創心靈，更從部落發現急待解決的孩童教育問題，與本會連繫討論之後，我們同意教會開班試辦課後輔導，由於人數不多，只能混齡上課。</p>
+		<p>為了充實課輔班教室，本會亦提供書架及募得的圖書，讓孩子除了習作功課之外，也積極鼓勵孩子閱讀有益的課外讀物，周傳道則準備了學習單，讓孩子寫下讀後心得，如此用心付出都是為了孩子。</p>
+		<p>陳妤、陳汝雙胞胎姊妹，父親曾為遠洋漁船漁工，三年前在海上被海盜搶劫差點失去生命，因此離開收入頗佳的工作，回到部落因就業不易，只能靠打零工維生，夫妻因工作忙碌忽略孩子的教養，幸好有夜間課輔，孩子在學校放學後，不必街頭閒逛或在家裡看電視，陳妤、陳汝每個月都拿到出席全勤獎，回家作業在課輔班都能寫完，同時也看完了好幾本課外讀物，周傳道說感謝主的帶領，讓愛基會能夠來協助這個曾經受苦的社區，希望所作的工能夠榮耀主，讓部落得著幫助並且蒙福。</p>
+	</div>
+	<div name="hualien_map_07" class="page_content">
+		<h2>花蓮縣富里鄉東里村</h2>
+		<big>參加人數: 55人/2班</big>
+		<p><span>實</span>施地點位於兩所升學率較高的學校之間，有人戲謔說好的被挑完了剩下不怎樣的都留在這裡。老師的期待是即使升入該校的學生資質與讀書動力都是次等的，但學校認為不可放棄，無論如何也要盡力把他們教好，去年才擔任教務主任的葉老師，積極邀請我們恢復在該校的夜間課輔，也為家長辦理說明會，要家長、學校和學生全面合作。</p>
+		<p>負責夜間課輔的葉主任，除了盡心盡力擔任數學老師，夜間課輔上課時間都會回到學校巡堂，努力終會帶出好的成果，今年該校的基測成積是近五年來最好的，我們也與有榮焉 。</p>
+	</div>
+	<div name="hualien_map_08" class="page_content">
+		<h2>花蓮縣壽豐鄉豐裡村</h2>
+		<big>參加人數: 41人/1班</big>
+		<p><span>該</span>校就讀的學生中，多是來自鄰近的幾個部落，雖是鄰近，仍是需要相當的車程才能到達。小靜，是班上非常用功的學生，從小父母親離異，兩姊妹跟著媽媽生活，一家生計全依靠母親辛苦的工作，小靜的姐姐為了減低家中支出，選擇以申請就學貸款的方式就讀東華大學，小靜也非常貼心的為了不讓媽媽擔心，更是非常認真念書。</p>
+		<p>未參加課輔前，小靜下課回到家中，總是容易被電視、音樂、上網等事使其分心，浪費時間，為了不讓媽媽擔心，且期許將來可以靠自己能力找到好工作，故決定參加學校課輔班，下課後留在學校繼續夜讀。</p>
+		<p>學校主任指出：『小靜非常珍惜到校念書的時間與機會，現在的她成績比之前好很多，尤其在上夜間課輔班時，還要求班級老師，將自己的位置調到最前面坐，這樣可更讓自己專心學習，也可以方便請教老師問題。』此次學測成績，小靜不負眾望，以高分考取第一志願的花蓮女中。</p>
+	</div>
 </div>
